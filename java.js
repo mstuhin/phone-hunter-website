@@ -1,1 +1,4 @@
-console.log('kk');
+const searchButton = () => {
+    const inputFild = document.getElementById("search-box").value;
+
+};
