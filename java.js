@@ -156,4 +156,51 @@ const selectedPhoneDetails = (phone_slug) => {
       </li >
       `
         }
-
+        // phone details div
+        const phoneItemDetails = `
+ <div class="card mx-5 shadow px-2 py-3">
+     <div class="row g-0">
+         <div class="col-md-4 d-flex justify-content-center align-items-center pb-3">
+             <img src="${selectedPhone.image}" class="card-img-top w-75 mx-auto pt-3" alt="">
+         </div>
+         <div class="col-md-8">
+             <div class="card-body">
+                 <h5 class="card-title">${selectedPhone.brand}</h5>
+             </div>
+             <ul class="list-group list-group-flush d-flex">
+                 <li class="list-group-item">
+                 Model Name : ${selectedPhone.name}
+                 </li>
+                 <li class="list-group-item">
+                 Release Date : 
+                 ${selectedPhone.releaseDate ? selectedPhone.releaseDate : 'No Release Date Found'}
+                 </li>
+                 <li class="list-group-item">
+                 ChipSet : 
+                 ${selectedPhone.mainFeatures.chipSet}
+                 </li>
+                 <li class="list-group-item">
+                 Display Size : 
+                 ${selectedPhone.mainFeatures.displaySize}
+                 </li>
+                 <li class="list-group-item">
+                 Memory : 
+                 ${selectedPhone.mainFeatures.memory}
+                 </li>
+                 <li class="list-group-item">
+                 Storage : 
+                 ${selectedPhone.mainFeatures.storage}
+                 </li>
+                 <li class="list-group-item">
+                 Sensor : 
+                 ${selectedPhone.mainFeatures.sensors.join(" | ")}
+                 </li>
+                 ${othersDetail ? othersDetail : ''}
+             </ul >
+         </div>
+     </div>
+ </div > `
+        // assinging loadSelectedDataDetails innerHTML
+        loadSelectedDataDetails.innerHTML = phoneItemDetails;
+    }
+}
