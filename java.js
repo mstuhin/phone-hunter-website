@@ -24,15 +24,3 @@ const searchPhone = (event) => {
         searchValueForShowMoreBtn += searchValue;
     }
 
-    // initialize for search value while show more button click
-    if (buttonText === 'Show More') {
-        searchValue = searchValueForShowMoreBtn;
-    }
-    // API URL
-    const url = `https://openapi.programming-hero.com/api/phones?search=${searchValue}`;
-    // fetch data
-    fetch(url)
-        .then(response => response.json())
-        .then(responseData => searchResults(responseData.data))
-
-    // search results function
